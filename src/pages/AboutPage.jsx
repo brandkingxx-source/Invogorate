@@ -12,7 +12,7 @@ export default function AboutPage() {
       <section className="page-hero page-hero--compact">
         <div className="video-hero-bg">
           <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="https://videos.pexels.com/video-files/5908779/5908779-hd_1920_1080_30fps.mp4" type="video/mp4" />
+            <source src="https://cdn.pixabay.com/video/2020/05/21/39914-424419563_large.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="hero-glow hero-glow--2" />
@@ -42,7 +42,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="right">
             <ParallaxImage
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200"
               alt="Chef preparing organic wholefood dishes"
               className="split-image"
             />
@@ -95,7 +95,7 @@ export default function AboutPage() {
         <div className="container split-section">
           <Reveal direction="left">
             <ParallaxImage
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200"
               alt="Organic kitchen preparation"
               className="split-image"
             />

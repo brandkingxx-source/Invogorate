@@ -21,7 +21,7 @@ export default function ContactPage() {
       <section className="page-hero page-hero--compact">
         <div className="page-hero-bg">
           <img
-            src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1260"
             alt=""
             aria-hidden="true"
           />

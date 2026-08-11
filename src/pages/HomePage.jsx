@@ -24,12 +24,14 @@ import Reveal from "../components/animations/Reveal";
 import Marquee from "../components/animations/Marquee";
 import ParallaxImage from "../components/animations/ParallaxImage";
 import MagneticButton from "../components/animations/MagneticButton";
+import PageTransition from "../components/animations/PageTransition";
+import TiltCard from "../components/animations/TiltCard";
 
-// Free Pexels CDN video URLs — swap with branded footage at any time
+// Stable stock video URLs — swap with your own branded footage at any time
 const HERO_VIDEO =
-  "https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4";
+  "https://cdn.pixabay.com/video/2022/09/28/133023-757157799_large.mp4";
 const REEL_VIDEO =
-  "https://videos.pexels.com/video-files/5908779/5908779-hd_1920_1080_30fps.mp4";
+  "https://cdn.pixabay.com/video/2020/05/21/39914-424419563_large.mp4";
 
 export default function HomePage({ onOpenRecipe, onBookClick }) {
   const heroRef = useRef(null);
@@ -238,10 +240,9 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
           <div className="card-grid card-grid--3">
             {RECIPES_DATA.slice(0, 3).map((recipe, i) => (
               <Reveal key={recipe.id} delay={i * 0.1} direction="up">
-                <motion.article
+                <TiltCard
+                  key={recipe.id}
                   className="recipe-card"
-                  whileHover={{ y: -10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
                   onClick={() => onOpenRecipe(recipe)}
                 >
                   <div className="recipe-card-img">
@@ -259,7 +260,7 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
                       Cook Mode &amp; Calculator <ArrowRight size={14} />
                     </span>
                   </div>
-                </motion.article>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -280,14 +281,14 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
           <div className="card-grid card-grid--3">
             {CATERING_PACKAGES.map((pkg, i) => (
               <Reveal key={pkg.title} delay={i * 0.12} direction="up">
-                <motion.article className="catering-card" whileHover={{ y: -8 }}>
+                <article className="catering-card">
                   <img src={pkg.image} alt={pkg.title} loading="lazy" />
-                  <div className="catering-card-body">
+                  <TiltCard key={pkg.title} className="catering-card-body glass-card-hover">
                     <h4>{pkg.title}</h4>
                     <p>{pkg.description}</p>
                     <span className="catering-price">From £{pkg.pricePerPerson}/person</span>
-                  </div>
-                </motion.article>
+                  </TiltCard>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -444,18 +445,18 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
           <div className="card-grid card-grid--3">
             {BEAUTY_PRODUCTS.map((prod, i) => (
               <Reveal key={prod.title} delay={i * 0.1} direction="scale">
-                <motion.article className="product-card" whileHover={{ scale: 1.02 }}>
+                <TiltCard className="product-card">
                   <img src={prod.image} alt={prod.title} loading="lazy" />
                   <span className="badge-organic">{prod.badge}</span>
                   <h4>{prod.title}</h4>
                   <p>{prod.subtitle}</p>
                   <div className="product-footer">
                     <span>{prod.price}</span>
-                    <Link to="/journal" className="btn-primary btn-sm">
+                    <Link to="/contact" className="btn-primary btn-sm">
                       Inquire
                     </Link>
                   </div>
-                </motion.article>
+                </TiltCard>
               </Reveal>
             ))}
           </div>

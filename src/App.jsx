@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import BookingModal from "./components/BookingModal";
@@ -22,8 +22,19 @@ export default function App() {
   const onOpenRecipe = (recipe) => setRecipeOpen(recipe);
   const onCloseRecipe = () => setRecipeOpen(null);
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <div className="app-shell">
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX }}
+      />
       <Header onBookClick={onBookClick} />
 
       <main className="main-content">

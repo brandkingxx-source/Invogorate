@@ -88,17 +88,17 @@ export const NAV_LINKS = [
 
 export const HERO_MEDIA = {
   home:
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200",
   services:
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
   menus:
-    "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
   journal:
-    "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200",
   about:
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200",
   contact:
-    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1800&q=80",
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200",
 };
 
 export const MARQUEE_ITEMS = [
@@ -151,7 +151,7 @@ export const SERVICE_PILLARS = [
     subtitle:
       "Nourishing, grounded menus designed to carry a full retreat experience from morning tea to evening supper.",
     image:
-      "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200",
     bullets: [
       "Breakfast, lunch, dinner and snack flow",
       "Plant-based menus tailored to the retreat energy",
@@ -164,7 +164,7 @@ export const SERVICE_PILLARS = [
     subtitle:
       "A more intimate, chef-led format for homes, villas and private gatherings across Yorkshire and beyond.",
     image:
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=1200",
     bullets: [
       "Smaller guest counts and more intimate pacing",
       "Seasonal menu direction with a luxury finish",
@@ -177,7 +177,7 @@ export const SERVICE_PILLARS = [
     subtitle:
       "Bold, nourishing food that can still move at event speed — built for conscious communities and wellbeing gatherings.",
     image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
     bullets: [
       "Festival-ready service style",
       "Menus that hold quality in high-volume settings",
@@ -193,7 +193,7 @@ export const CATERING_PACKAGES = [
     description:
       "Full multi-day catering for wellness retreats: breakfast through supper, snacks and herbal elixir bars, all 5★ hygiene certified.",
     image:
-      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200",
     pricePerPerson: 85,
     highlights: [
       "Daily breakfast, lunch, dinner + snacks",
@@ -207,7 +207,7 @@ export const CATERING_PACKAGES = [
     description:
       "A multi-course plated or family-style chef dinner for intimate celebrations, hosted weekends and luxury home stays.",
     image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=1200",
     pricePerPerson: 110,
     highlights: [
       "4–6 course seasonal tasting menu",
@@ -221,7 +221,7 @@ export const CATERING_PACKAGES = [
     description:
       "High-volume, high-energy festival service with bold visual branding and a seed-oil free menu that keeps queues moving.",
     image:
-      "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
     pricePerPerson: 45,
     highlights: [
       "Brandable stall / kiosk setup",
@@ -257,7 +257,7 @@ export const MENU_COLLECTIONS = [
   {
     title: "Retreat Tables",
     image:
-      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1200",
     summary:
       "Grounding breakfasts, colourful lunches and deeply satisfying suppers shaped for longer stays and slower mornings.",
     details: [
@@ -270,7 +270,7 @@ export const MENU_COLLECTIONS = [
   {
     title: "Private Dining Menus",
     image:
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200",
     summary:
       "A more elevated, plated experience for intimate celebrations, hosted weekends and chef-led evenings.",
     details: [
@@ -283,7 +283,7 @@ export const MENU_COLLECTIONS = [
   {
     title: "Festival Service",
     image:
-      "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
     summary:
       "Designed for movement, flow and larger groups while keeping the food generous, vibrant and recognisably Invigourate.",
     details: [
@@ -301,7 +301,7 @@ export const SIGNATURE_DISHES = [
     subtitle:
       "Fruit, grains, bakes and lighter savoury dishes for a calm retreat start.",
     image:
-      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
     tags: ["Retreat", "Morning", "Wholefood"],
     note: "Designed to feel fresh, restorative and quietly luxurious.",
   },
@@ -310,7 +310,7 @@ export const SIGNATURE_DISHES = [
     subtitle:
       "Colourful bowls, roasted vegetables, herbs and bright dressings for communal dining.",
     image:
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200",
     tags: ["Sharing", "Lunch", "Seasonal"],
     note: "Built for hosts who want generosity without heaviness.",
   },
@@ -319,7 +319,7 @@ export const SIGNATURE_DISHES = [
     subtitle:
       "A plated or shared dinner rhythm that feels intimate and elevated rather than formal.",
     image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200",
     tags: ["Private chef", "Dinner", "Elevated"],
     note: "A slower-paced format with more room for atmosphere and detail.",
   },
@@ -328,7 +328,7 @@ export const SIGNATURE_DISHES = [
     subtitle:
       "Fast-moving, crowd-friendly dishes that still land with freshness and intention.",
     image:
-      "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200",
     tags: ["Festival", "High energy", "Event-ready"],
     note: "Designed to keep queues moving without flattening the brand.",
   },
@@ -341,7 +341,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "Retreat food needs to do more than look good in a photo. It has to carry energy, rhythm and comfort over multiple days.",
     image:
-      "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200",
     points: [
       "Menus should support the pace of the day",
       "Shared meals can become part of the retreat experience",
@@ -354,7 +354,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "Luxury in this category comes from confidence, restraint and ingredient quality, not from overcomplicating every plate.",
     image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=1200",
     points: [
       "Let ingredient quality do the heavy lifting",
       "Use colour and texture as part of the experience",
@@ -367,7 +367,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "The audit shows Invigourate already speaks in a more personal, long-form way. The new site turns that into a stronger digital experience.",
     image:
-      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
     points: [
       "Longer-form language can create trust",
       "Proof points need context, not just badges",
@@ -380,7 +380,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "The seed-oil free position isn't a marketing gimmick. It's a culinary and nutritional standard we apply to every single plate.",
     image:
-      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200",
     points: [
       "Cold-pressed and stone-ground fats only",
       "Water-sautéing, broth braising and steam techniques",
@@ -393,7 +393,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "A behind-the-scenes look at how we pace menu design across a full retreat weekend, from Friday arrival through Sunday brunch.",
     image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=1200",
     points: [
       "Arrival dinner: grounding, not heavy",
       "Middle day: biggest meal, strongest flavours",
@@ -406,7 +406,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "Our booking process is intentionally personal. Here's how we go from first Instagram message to a confirmed, stress-free event.",
     image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
     points: [
       "We reply within 24 hours with clarifying questions",
       "A draft menu arrives 3–5 days after discovery call",
@@ -422,7 +422,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Silky, 100% seed-oil free comfort food packed with anti-inflammatory wholefood spices and coconut cream.",
     image:
-      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1200",
     prepTime: 15,
     cookTime: 25,
     servings: 4,
@@ -495,7 +495,7 @@ export const RECIPES_DATA = [
     subtitle:
       "A showstopping, seed-oil free raw dessert made with medjool dates, raw cacao, and coconut nectar.",
     image:
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200",
     prepTime: 20,
     cookTime: 0,
     servings: 8,
@@ -545,7 +545,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Coconut-oil-free oven roasted rainbow roots with a crisp stone-mustard and fresh thyme crust.",
     image:
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
     prepTime: 20,
     cookTime: 40,
     servings: 6,
@@ -598,7 +598,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Slow-fermented organic sourdough cinnamon buns swirled with stone-ground almond butter and date caramel.",
     image:
-      "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
     prepTime: 60,
     cookTime: 28,
     servings: 8,
@@ -656,7 +656,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Deep, restorative double-stock ramen with hand-shiitake dashi, hatcho miso and seed-oil-free scallion finish.",
     image:
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200",
     prepTime: 30,
     cookTime: 90,
     servings: 4,
@@ -724,7 +724,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Cucumber, celery, sun-sprouted barley grass, ashwagandha and cold-pressed lime — the morning retreat ritual.",
     image:
-      "https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200",
     prepTime: 10,
     cookTime: 0,
     servings: 2,
@@ -782,7 +782,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "Rosehip, sea buckthorn and prickly pear oils, cold-pressed in small Yorkshire batches.",
     image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200",
     badge: "Cold-Pressed",
     price: "£38 / 30ml",
   },
@@ -791,7 +791,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "Whipped shea, raw cocoa butter and calendula-infused coconut — zero preservatives.",
     image:
-      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200",
     badge: "Organic",
     price: "£24 / 100ml",
   },
@@ -800,7 +800,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "Hand-poured cold-process soap with coconut-activated charcoal and french green clay.",
     image:
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=1200",
     badge: "Cold Process",
     price: "£12 / bar",
   },
@@ -809,7 +809,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "A daily ritual: ashwagandha, rhodiola and tulsi extracted in organic cane alcohol for 6 weeks.",
     image:
-      "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
     badge: "Tincture",
     price: "£32 / 50ml",
   },
@@ -818,7 +818,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "Ground organic oats, epsom salts and english lavender — retreat bathroom staple.",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200",
     badge: "Retreat Edition",
     price: "£16 / 250g",
   },
@@ -827,7 +827,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "Beeswax-free duo with candelilla, shea and cold-pressed raspberry seed oil. Set of two.",
     image:
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=1200",
     badge: "Duo Set",
     price: "£14 / set",
   },
@@ -840,7 +840,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "James immediately put my mind at ease. We hosted 30 guests across a weekend retreat and everything — the pacing, the flavours, the cleanup — was effortless.",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
   },
   {
     name: "Anja Poulter",
@@ -848,7 +848,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "Food was perfect for the event, delicious and really well presented. The 100% vegan menu won over the sceptics at our table — we're rebooking already.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1200",
   },
   {
     name: "Hussain",
@@ -856,7 +856,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "It was the first time in my life that I have gone fully vegan for a full weekend. The flavours were so bold I never once missed meat or dairy.",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200",
   },
   {
     name: "Clara Bennett",
@@ -864,7 +864,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "Finding a caterer that truly gets wellness-space hospitality is hard. Invigourate's food doesn't just feed people — it carries the energy of the whole retreat.",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
   },
 ];
 

@@ -32,7 +32,7 @@ export default function RecipesPage({ onOpenRecipe }) {
       <section className="page-hero page-hero--compact">
         <div className="page-hero-bg">
           <img
-            src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
             aria-hidden="true"
           />

@@ -11,7 +11,7 @@ export default function ShopPage() {
       <section className="page-hero page-hero--compact">
         <div className="page-hero-bg">
           <img
-            src="https://images.unsplash.com/photo-1596755389378-c31d37e6e281?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.pexels.com/photos/1482803/pexels-photo-1482803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
             aria-hidden="true"
           />
@@ -81,7 +81,7 @@ export default function ShopPage() {
           <Reveal direction="left">
             <div className="split-image">
               <img
-                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.pexels.com/photos/2083163/pexels-photo-2083163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Artisan seed-oil free sourdough baked goods"
               />
             </div>

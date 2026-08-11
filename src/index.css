@@ -704,6 +704,17 @@ input, select, textarea {
   transition: all 0.45s var(--ease-framer);
   padding: 18px 0;
 }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-accent);
+  transform-origin: 0%;
+  z-index: 9999;
+}
 .site-header--scrolled {
   padding: 10px 0;
   background: rgba(250, 248, 245, 0.92);

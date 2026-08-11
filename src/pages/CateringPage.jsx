@@ -22,7 +22,7 @@ export default function CateringPage({ onBookClick }) {
       <section className="page-hero">
         <div className="video-hero-bg">
           <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            <source src="https://cdn.pixabay.com/video/2022/09/28/133023-757157799_large.mp4" type="video/mp4" />
           </video>
         </div>
         <div className="hero-glow hero-glow--1" />

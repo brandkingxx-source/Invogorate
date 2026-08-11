@@ -10,11 +10,12 @@ export default function RecipeModal({ recipe, onClose }) {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (recipe) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [recipe]);
 
   useEffect(() => {
     let interval = null;
