@@ -16,6 +16,7 @@ import {
   BEAUTY_PRODUCTS,
   AUDIT_TESTIMONIALS,
   CATERING_PACKAGES,
+  SIGNATURE_DISHES,
   VIDEO_MEDIA,
   VIDEO_POSTERS,
 } from "../data/siteData";
@@ -27,6 +28,7 @@ import MagneticButton from "../components/animations/MagneticButton";
 import TiltCard from "../components/animations/TiltCard";
 import VideoReel from "../components/animations/VideoReel";
 import Counter from "../components/animations/Counter";
+import HorizontalGallery from "../components/animations/HorizontalGallery";
 
 const HERO_VIDEO = VIDEO_MEDIA.homeHero;
 const REEL_VIDEO = VIDEO_MEDIA.chefsReel;
@@ -72,6 +74,9 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // Waabi-style cinematic zoom-out: video settles and darkens as you scroll away
+  const heroVideoScale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
+  const heroVideoDarken = useTransform(scrollYProgress, [0, 1], [0, 0.45]);
 
   const marqueeItems = [
     "100% Seed-Oil Free",
@@ -88,8 +93,8 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
     <div className="home-page">
       {/* ── Hero ── */}
       <section className="hero" ref={heroRef}>
-        {/* Ambient video background */}
-        <div className="video-hero-bg">
+        {/* Ambient video background — scales down cinematically on scroll */}
+        <motion.div className="video-hero-bg" style={{ scale: heroVideoScale }}>
           <video
             autoPlay
             muted
@@ -105,7 +110,8 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
           >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-        </div>
+        </motion.div>
+        <motion.div className="hero-scrim" style={{ opacity: heroVideoDarken }} />
 
         <div className="hero-glow hero-glow--1" />
         <div className="hero-glow hero-glow--2" />
@@ -196,7 +202,7 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
         </div>
       </section>
 
-      <Marquee items={marqueeItems} speed={35} className="marquee--dark" />
+      <Marquee items={marqueeItems} speed={35} className="marquee--dark marquee--display" />
 
       {/* ── Metrics ── */}
       <section className="metrics-bar">
@@ -373,6 +379,49 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
           </Reveal>
         </div>
       </section>
+
+      {/* ── Signature dishes — scroll-driven horizontal gallery ── */}
+      <HorizontalGallery
+        className="hg-section"
+        items={SIGNATURE_DISHES}
+        header={
+          <div className="hg-header-inner">
+            <span className="section-eyebrow section-eyebrow--light">Signature Dishes</span>
+            <SplitText
+              text="Moments We're Known For"
+              className="section-title section-title--light"
+            />
+            <p>
+              Four plates that tell the Invigourate story — scroll to explore the
+              table, and hover a card to feel the detail.
+            </p>
+          </div>
+        }
+        renderItem={(dish, i) => (
+          <article className="hg-dish-card">
+            <div className="hg-dish-img">
+              <motion.img
+                src={dish.image}
+                alt={dish.title}
+                loading="lazy"
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              />
+              <span className="hg-dish-index">0{i + 1}</span>
+            </div>
+            <div className="hg-dish-body">
+              <div className="hg-dish-tags">
+                {dish.tags.map((t) => (
+                  <span key={t}>{t}</span>
+                ))}
+              </div>
+              <h4>{dish.title}</h4>
+              <p>{dish.subtitle}</p>
+              <em>{dish.note}</em>
+            </div>
+          </article>
+        )}
+      />
 
       {/* ── Photo gallery ── */}
       <section className="section gallery-section">
