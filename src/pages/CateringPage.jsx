@@ -1,11 +1,19 @@
 import { useState, useMemo } from "react";
 import { ArrowRight, CheckCircle2, Scale, ChefHat } from "lucide-react";
 import { motion } from "framer-motion";
-import { CATERING_PACKAGES } from "../data/siteData";
+import {
+  CATERING_PACKAGES,
+  VIDEO_MEDIA,
+  VIDEO_POSTERS,
+  EXPERIENCE_STRIPS,
+  STATS,
+} from "../data/siteData";
 import SplitText from "../components/animations/SplitText";
 import Reveal from "../components/animations/Reveal";
 import ParallaxImage from "../components/animations/ParallaxImage";
 import MagneticButton from "../components/animations/MagneticButton";
+import Marquee from "../components/animations/Marquee";
+import Counter from "../components/animations/Counter";
 
 export default function CateringPage({ onBookClick }) {
   const [calcPackage, setCalcPackage] = useState(CATERING_PACKAGES[0]);
@@ -21,8 +29,8 @@ export default function CateringPage({ onBookClick }) {
     <div className="page page--catering">
       <section className="page-hero">
         <div className="video-hero-bg">
-          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="https://cdn.pixabay.com/video/2022/09/28/133023-757157799_large.mp4" type="video/mp4" />
+          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true" poster={VIDEO_POSTERS.cateringHero}>
+            <source src={VIDEO_MEDIA.cateringHero} type="video/mp4" />
           </video>
         </div>
         <div className="hero-glow hero-glow--1" />
@@ -149,6 +157,53 @@ export default function CateringPage({ onBookClick }) {
         </div>
       </section>
 
+      {/* Experience strips — audit-backed positioning */}
+      <section className="section">
+        <div className="container">
+          <div className="experience-strips">
+            {EXPERIENCE_STRIPS.map((strip, i) => (
+              <Reveal key={strip.title} delay={i * 0.12} direction="up">
+                <div className="experience-strip">
+                  <span className="section-eyebrow">{strip.eyebrow}</span>
+                  <h4>{strip.title}</h4>
+                  <p>{strip.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats band — animated counters from the audit */}
+      <section className="section section--dark">
+        <div className="container">
+          <div className="metrics-grid">
+            {STATS.map((stat, i) => (
+              <Reveal key={stat.label} delay={i * 0.08} direction="up" className="metric-cell">
+                <motion.div
+                  className="metric-val metric-val--light"
+                  initial={{ scale: 0.5 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 200, delay: i * 0.1 }}
+                >
+                  {stat.value.includes(".") ? (
+                    <Counter value={parseFloat(stat.value)} decimals={2} suffix="%" />
+                  ) : stat.value.includes("K") ? (
+                    <Counter value={1.6} decimals={1} suffix="K" />
+                  ) : stat.value.includes("/") ? (
+                    <Counter value={5} suffix="/5" />
+                  ) : (
+                    <Counter value={parseInt(stat.value)} />
+                  )}
+                </motion.div>
+                <span className="metric-lbl metric-lbl--light">{stat.label}</span>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="section">
         <div className="container">
@@ -172,6 +227,12 @@ export default function CateringPage({ onBookClick }) {
           </div>
         </div>
       </section>
+
+      <Marquee
+        items={["DM to Book", "Retreats", "Private Chef", "Festivals", "5★ Hygiene", "Organic Only", "Seed-Oil Free"]}
+        speed={40}
+        className="marquee--dark"
+      />
     </div>
   );
 }

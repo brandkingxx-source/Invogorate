@@ -101,6 +101,49 @@ export const HERO_MEDIA = {
     "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200",
 };
 
+// Verified hotlinkable stock footage (Pexels CDN, checked 2026).
+// Swap with branded footage at any time — keep the mp4 URLs live.
+export const VIDEO_MEDIA = {
+  // Hero background — vibrant cooking on the stove
+  homeHero:
+    "https://videos.pexels.com/video-files/4912632/4912632-hd_1920_1080_24fps.mp4",
+  // "Watch our chefs" reel — chef at work in the kitchen
+  chefsReel:
+    "https://videos.pexels.com/video-files/14584573/14584573-hd_1920_1080_25fps.mp4",
+  // Catering page hero — food preparation close-up
+  cateringHero:
+    "https://videos.pexels.com/video-files/854216/854216-hd_1920_1080_25fps.mp4",
+  // About page hero — fresh vegetables being prepared
+  aboutHero:
+    "https://videos.pexels.com/video-files/10039758/10039758-hd_1920_1080_24fps.mp4",
+  // Journal / editorial reel — garden-led vegetable prep
+  journalReel:
+    "https://videos.pexels.com/video-files/5866266/5866266-hd_1920_1080_25fps.mp4",
+  // Salad finishing — used on contact CTA backgrounds
+  saladFinishing:
+    "https://videos.pexels.com/video-files/3195728/3195728-hd_1920_1080_25fps.mp4",
+  // Second chef clip — plated dish being finished
+  chefPlating:
+    "https://videos.pexels.com/video-files/5794190/5794190-hd_1920_1080_25fps.mp4",
+  // Vegetables harvest prep
+  harvestPrep:
+    "https://videos.pexels.com/video-files/7204579/7204579-hd_1920_1080_24fps.mp4",
+};
+
+// Poster fallbacks shown before a video's first frame loads
+export const VIDEO_POSTERS = {
+  homeHero:
+    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80",
+  chefsReel:
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80",
+  cateringHero:
+    "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?auto=format&fit=crop&w=1600&q=80",
+  aboutHero:
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1600&q=80",
+  journalReel:
+    "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?auto=format&fit=crop&w=1600&q=80",
+};
+
 export const MARQUEE_ITEMS = [
   "100% Seed-Oil Free",
   "Organic Wholefoods",

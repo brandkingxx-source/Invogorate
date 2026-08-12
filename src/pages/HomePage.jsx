@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   ArrowRight,
   ChefHat,
@@ -9,8 +9,6 @@ import {
   Sparkles,
   Star,
   ShieldCheck,
-  Play,
-  Pause,
 } from "lucide-react";
 import {
   AUDIT_METADATA,
@@ -18,25 +16,58 @@ import {
   BEAUTY_PRODUCTS,
   AUDIT_TESTIMONIALS,
   CATERING_PACKAGES,
+  VIDEO_MEDIA,
+  VIDEO_POSTERS,
 } from "../data/siteData";
 import SplitText from "../components/animations/SplitText";
 import Reveal from "../components/animations/Reveal";
 import Marquee from "../components/animations/Marquee";
 import ParallaxImage from "../components/animations/ParallaxImage";
 import MagneticButton from "../components/animations/MagneticButton";
-import PageTransition from "../components/animations/PageTransition";
 import TiltCard from "../components/animations/TiltCard";
+import VideoReel from "../components/animations/VideoReel";
+import Counter from "../components/animations/Counter";
 
-// Stable stock video URLs — swap with your own branded footage at any time
-const HERO_VIDEO =
-  "https://cdn.pixabay.com/video/2022/09/28/133023-757157799_large.mp4";
-const REEL_VIDEO =
-  "https://cdn.pixabay.com/video/2020/05/21/39914-424419563_large.mp4";
+const HERO_VIDEO = VIDEO_MEDIA.homeHero;
+const REEL_VIDEO = VIDEO_MEDIA.chefsReel;
+const REEL_POSTER = VIDEO_POSTERS.chefsReel;
+
+// Photo gallery strip — more vibrant wholefood imagery on the home page
+const GALLERY = [
+  {
+    src: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    alt: "Colourful organic bowl with fresh greens",
+    label: "Garden bowls",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80",
+    alt: "Fresh seasonal vegetables on a wooden table",
+    label: "Seasonal produce",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+    alt: "Elegant plated wholefood dish",
+    label: "Private dining",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1484723091792-c19564cb333d?auto=format&fit=crop&w=900&q=80",
+    alt: "Wholesome breakfast table spread",
+    label: "Retreat mornings",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
+    alt: "Vibrant vegan bowl with seeds and grains",
+    label: "Seed-oil free",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=900&q=80",
+    alt: "Healthy cooking ingredients arranged flat",
+    label: "Wholefood kitchen",
+  },
+];
 
 export default function HomePage({ onOpenRecipe, onBookClick }) {
   const heroRef = useRef(null);
-  const reelVideoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 120]);
@@ -52,17 +83,6 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
     "Cold-Pressed Oils Only",
     "DM to Book",
   ];
-
-  const togglePlay = () => {
-    if (!reelVideoRef.current) return;
-    if (playing) {
-      reelVideoRef.current.pause();
-      setPlaying(false);
-    } else {
-      reelVideoRef.current.play();
-      setPlaying(true);
-    }
-  };
 
   return (
     <div className="home-page">
@@ -315,117 +335,89 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
             </p>
           </Reveal>
 
-          <Reveal delay={0.2}>
-            <div className="video-reel-wrap" onClick={togglePlay} role="button" aria-label={playing ? "Pause video" : "Play video"}>
-              <video
-                ref={reelVideoRef}
-                preload="metadata"
-                loop
-                playsInline
-                muted={false}
-                poster="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80"
-              >
-                <source src={REEL_VIDEO} type="video/mp4" />
-              </video>
-
-              {/* Play overlay */}
-              <div className={`video-play-btn ${playing ? "hidden" : ""}`}>
-                <motion.div
-                  className="video-play-icon"
-                  whileHover={{ scale: 1.12 }}
-                  whileTap={{ scale: 0.96 }}
-                >
-                  <Play size={32} color="white" fill="white" style={{ marginLeft: 4 }} />
-                </motion.div>
-                <span className="video-play-label">Watch Our Process</span>
-              </div>
-
-              {/* Pause overlay (shows briefly on click when playing) */}
-              {playing && (
-                <motion.button
-                  style={{
-                    position: "absolute",
-                    bottom: 80,
-                    right: 24,
-                    zIndex: 5,
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    background: "rgba(0,0,0,0.5)",
-                    backdropFilter: "blur(8px)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    cursor: "pointer",
-                    color: "white",
-                  }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.1 }}
-                  onClick={(e) => { e.stopPropagation(); togglePlay(); }}
-                >
-                  <Pause size={18} />
-                </motion.button>
-              )}
-
-              {/* Bottom overlay info */}
-              <div className="video-reel-overlay">
-                <div className="video-reel-overlay-left">
-                  <span className="video-reel-title">Invigourate Catering Reel</span>
-                  <span className="video-reel-sub">Organic · Seed-Oil Free · 5★ Certified</span>
-                </div>
-                <span className="badge-seed-oil">Live Demo</span>
-              </div>
-            </div>
-          </Reveal>
+          <VideoReel
+            src={REEL_VIDEO}
+            poster={REEL_POSTER}
+            title="Invigourate Catering Reel"
+            subtitle="Organic · Seed-Oil Free · 5★ Certified"
+            badge="Live Demo"
+          />
 
           {/* Stats strip below video */}
           <Reveal delay={0.35}>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 24,
-              maxWidth: 1100,
-              margin: "40px auto 0",
-            }}>
+            <div className="video-stats-strip">
               {[
-                { icon: "🌿", val: "100%", label: "Seed-Oil Free Cooking" },
-                { icon: "🏆", val: "5★", label: "Hygiene Rating Certified" },
-                { icon: "🤝", val: "500+", label: "Events Catered" },
+                { icon: "🌿", val: <Counter value={100} suffix="%" />, label: "Seed-Oil Free Cooking" },
+                { icon: "🏆", val: <Counter value={5} suffix="★" />, label: "Hygiene Rating Certified" },
+                { icon: "🤝", val: <Counter value={500} suffix="+" />, label: "Events Catered" },
               ].map((s, i) => (
                 <motion.div
                   key={s.label}
+                  className="video-stat-card"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.3 }}
-                  style={{
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "var(--radius-xl)",
-                    padding: "28px 24px",
-                    textAlign: "center",
-                    backdropFilter: "blur(8px)",
-                  }}
                 >
-                  <div style={{ fontSize: "2rem", marginBottom: 8 }}>{s.icon}</div>
-                  <div style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "2.2rem",
-                    fontWeight: 800,
-                    background: "linear-gradient(135deg, #fff, var(--brand-accent-soft))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    lineHeight: 1,
-                    marginBottom: 8,
-                  }}>{s.val}</div>
-                  <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.88rem", fontWeight: 600 }}>{s.label}</div>
+                  <div className="video-stat-icon">{s.icon}</div>
+                  <div className="video-stat-val">{s.val}</div>
+                  <div className="video-stat-label">{s.label}</div>
                 </motion.div>
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── Photo gallery ── */}
+      <section className="section gallery-section">
+        <div className="container">
+          <Reveal className="text-center section-intro">
+            <span className="section-eyebrow">A Feast for the Eyes</span>
+            <SplitText
+              text="Vibrant Moments From Our Tables"
+              className="section-title"
+            />
+            <p className="section-desc" style={{ margin: "0 auto" }}>
+              Every Invigourate experience is a visual story — seasonal produce, bold colour and
+              plates designed to feel as good as they taste.
+            </p>
+          </Reveal>
+
+          <div className="gallery-grid">
+            {GALLERY.map((item, i) => (
+              <Reveal
+                key={item.src}
+                delay={(i % 3) * 0.1}
+                direction={i % 2 === 0 ? "up" : "scale"}
+                className={`gallery-item gallery-item--${i + 1}`}
+              >
+                <motion.figure
+                  className="gallery-figure"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                >
+                  <motion.img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    initial={{ scale: 1.12 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                  <motion.figcaption
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.25, duration: 0.5 }}
+                  >
+                    {item.label}
+                  </motion.figcaption>
+                </motion.figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,18 +1,20 @@
 import { Instagram, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AUDIT_METADATA } from "../data/siteData";
+import { motion } from "framer-motion";
+import { AUDIT_METADATA, VIDEO_MEDIA, VIDEO_POSTERS, BRAND_STORY, AUDIT_INSIGHTS, STATS } from "../data/siteData";
 import SplitText from "../components/animations/SplitText";
 import Reveal from "../components/animations/Reveal";
 import ParallaxImage from "../components/animations/ParallaxImage";
 import MagneticButton from "../components/animations/MagneticButton";
+import Counter from "../components/animations/Counter";
 
 export default function AboutPage() {
   return (
     <div className="page page--about">
       <section className="page-hero page-hero--compact">
         <div className="video-hero-bg">
-          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="https://cdn.pixabay.com/video/2020/05/21/39914-424419563_large.mp4" type="video/mp4" />
+          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true" poster={VIDEO_POSTERS.aboutHero}>
+            <source src={VIDEO_MEDIA.aboutHero} type="video/mp4" />
           </video>
         </div>
         <div className="hero-glow hero-glow--2" />
@@ -50,7 +52,79 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Brand story cards */}
+      <section className="section">
+        <div className="container">
+          <Reveal className="text-center section-intro">
+            <SplitText text="The Invigourate Story" className="section-title" />
+          </Reveal>
+          <div className="card-grid card-grid--3">
+            {BRAND_STORY.map((story, i) => (
+              <Reveal key={story.title} delay={i * 0.12} direction="up">
+                <motion.article
+                  className="archetype-card"
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                >
+                  <span className="archetype-num">0{i + 1}</span>
+                  <h4>{story.title}</h4>
+                  <p>{story.text}</p>
+                </motion.article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community stats — animated counters from the audit */}
+      <section className="metrics-bar">
+        <div className="container metrics-grid">
+          {STATS.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 0.08} direction="up" className="metric-cell">
+              <motion.div
+                className="metric-val"
+                initial={{ scale: 0.5 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, delay: i * 0.1 }}
+              >
+                {stat.value.includes(".") ? (
+                  <Counter value={parseFloat(stat.value)} decimals={2} suffix="%" />
+                ) : stat.value.includes("K") ? (
+                  <Counter value={1.6} decimals={1} suffix="K" />
+                ) : stat.value.includes("/") ? (
+                  <Counter value={5} suffix="/5" />
+                ) : (
+                  <Counter value={parseInt(stat.value)} />
+                )}
+              </motion.div>
+              <span className="metric-lbl">{stat.label}</span>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Audit insights */}
       <section className="section section--cream">
+        <div className="container">
+          <Reveal className="text-center section-intro">
+            <SplitText text="What the Community Tells Us" className="section-title" />
+          </Reveal>
+          <div className="card-grid card-grid--3">
+            {AUDIT_INSIGHTS.map((insight, i) => (
+              <Reveal key={insight.title} delay={i * 0.1} direction="up">
+                <div className="insight-card">
+                  <span className="insight-num">0{i + 1}</span>
+                  <h4>{insight.title}</h4>
+                  <p>{insight.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <Reveal className="text-center section-intro">
             <SplitText text="What We Offer" className="section-title" />

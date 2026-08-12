@@ -1,9 +1,16 @@
-import { Instagram, ShoppingBag } from "lucide-react";
+import { Instagram, ShoppingBag, ArrowRight, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
-import { BEAUTY_PRODUCTS, AUDIT_METADATA } from "../data/siteData";
+import {
+  BEAUTY_PRODUCTS,
+  AUDIT_METADATA,
+  JOURNAL_FEATURES,
+  VIDEO_MEDIA,
+  VIDEO_POSTERS,
+} from "../data/siteData";
 import SplitText from "../components/animations/SplitText";
 import Reveal from "../components/animations/Reveal";
 import MagneticButton from "../components/animations/MagneticButton";
+import VideoReel from "../components/animations/VideoReel";
 
 export default function ShopPage() {
   return (
@@ -97,6 +104,66 @@ export default function ShopPage() {
               <Instagram size={16} /> Order Baked Goods
             </MagneticButton>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── From the journal ── */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header">
+            <Reveal>
+              <span className="section-eyebrow">The Journal</span>
+              <SplitText text="Recipes, Retreats & Wholefood Thinking" className="section-title" />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <MagneticButton href={AUDIT_METADATA.contact.instagramUrl} className="btn-outline">
+                <BookOpen size={16} /> More on Instagram
+              </MagneticButton>
+            </Reveal>
+          </div>
+
+          <VideoReel
+            src={VIDEO_MEDIA.journalReel}
+            poster={VIDEO_POSTERS.journalReel}
+            title="From the Invigourate Kitchen"
+            subtitle="Garden-led prep · Seed-oil free · Organic"
+            badge="Journal Reel"
+          />
+
+          <div className="journal-grid" style={{ marginTop: "48px" }}>
+            {JOURNAL_FEATURES.map((post, i) => (
+              <Reveal key={post.title} delay={(i % 3) * 0.1} direction="up">
+                <motion.article
+                  className="journal-card"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                >
+                  <div className="journal-card-img">
+                    <motion.img
+                      src={post.image}
+                      alt={post.title}
+                      loading="lazy"
+                      whileHover={{ scale: 1.06 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                    <span className="journal-card-category">{post.category}</span>
+                  </div>
+                  <div className="journal-card-body">
+                    <h4>{post.title}</h4>
+                    <p>{post.excerpt}</p>
+                    <ul className="journal-points">
+                      {post.points.map((pt) => (
+                        <li key={pt}>{pt}</li>
+                      ))}
+                    </ul>
+                    <span className="card-link">
+                      Read the Story <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </motion.article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>

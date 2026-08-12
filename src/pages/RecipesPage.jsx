@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Search, X, ArrowRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { RECIPES_DATA } from "../data/siteData";
+import { RECIPES_DATA, MENU_COLLECTIONS } from "../data/siteData";
 import SplitText from "../components/animations/SplitText";
 import Reveal from "../components/animations/Reveal";
 
@@ -150,6 +150,43 @@ export default function RecipesPage({ onOpenRecipe }) {
               <p>No recipes match your filters. Try adjusting your search.</p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Menu collections */}
+      <section className="section section--cream">
+        <div className="container">
+          <Reveal className="text-center section-intro">
+            <span className="section-eyebrow">Menu Collections</span>
+            <SplitText text="Built Around the Occasion" className="section-title" />
+            <p className="section-desc" style={{ margin: "0 auto" }}>
+              Whether it's a slow retreat table, an intimate private dinner or a festival in full
+              flow — every collection is designed seed-oil free, organic and 5★ certified.
+            </p>
+          </Reveal>
+
+          <div className="menu-collections-grid">
+            {MENU_COLLECTIONS.map((collection, i) => (
+              <Reveal key={collection.title} delay={i * 0.12} direction="up">
+                <motion.article
+                  className="menu-collection-card"
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 240, damping: 22 }}
+                >
+                  <img src={collection.image} alt={collection.title} loading="lazy" />
+                  <div className="menu-collection-overlay">
+                    <h4>{collection.title}</h4>
+                    <p>{collection.summary}</p>
+                    <div className="menu-collection-details">
+                      {collection.details.map((d) => (
+                        <span key={d}>{d}</span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>

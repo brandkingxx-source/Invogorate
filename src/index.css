@@ -553,6 +553,69 @@ input, select, textarea {
   font-size: 0.82rem;
   font-weight: 500;
 }
+.video-reel-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(7,24,16,0.35) 100%);
+}
+.video-reel-pause {
+  position: absolute;
+  bottom: 84px;
+  right: 24px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  color: white;
+}
+
+/* Video stats strip below the reel */
+.video-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+.video-stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.video-stat-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.video-stat-val {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, var(--brand-accent-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.video-stat-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
 
 /* ──────────── Parallax Image Wrap ──────────── */
 
@@ -1563,6 +1626,49 @@ input, select, textarea {
   z-index: 1;
 }
 
+/* Insight Cards (audit learnings) */
+.insight-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--brand-sage);
+  box-shadow: var(--shadow-xs);
+  transition: all 0.45s var(--ease-framer);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.insight-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-top-color: var(--brand-accent);
+}
+.insight-num {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--brand-pale);
+  line-height: 1;
+}
+.insight-card h4 {
+  margin-bottom: 12px;
+  color: var(--brand-primary);
+  position: relative;
+  z-index: 1;
+}
+.insight-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
 /* ──────────── Metrics Bar ──────────── */
 
 .metrics-bar {
@@ -1611,6 +1717,15 @@ input, select, textarea {
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.02em;
+}
+.metric-val--light {
+  background: linear-gradient(135deg, #fff, var(--brand-accent-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.metric-lbl--light {
+  color: var(--text-sage);
 }
 
 /* ──────────── Marquee ──────────── */
@@ -2963,6 +3078,63 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
+/* ──────────── Home Photo Gallery ──────────── */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  gap: 20px;
+}
+.gallery-item--1 { grid-row: span 2; }
+.gallery-item--2 { grid-column: span 2; }
+.gallery-item--6 { grid-row: span 2; }
+.gallery-figure {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+.gallery-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+.gallery-figure::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7,24,16,0.72) 100%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-framer);
+}
+.gallery-figure:hover::after {
+  opacity: 1;
+}
+.gallery-figure figcaption {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  color: white;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s var(--ease-framer);
+  z-index: 2;
+}
+.gallery-figure:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ──────────── Custom Scrollbar ──────────── */
 
 ::-webkit-scrollbar {
@@ -3026,6 +3198,11 @@ input, select, textarea {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+  .gallery-item--2 { grid-column: span 1; }
   .metric-cell:nth-child(2)::after { display: none; }
   .metric-cell:not(:nth-child(even))::after {
     content: '';
@@ -3159,6 +3336,99 @@ input, select, textarea {
   .section-header { gap: 16px; margin-bottom: 36px; }
   /* Section intro mobile */
   .section-intro { margin-bottom: 36px; }
+}
+
+/* ──────────── Small Phones (<560px) ──────────── */
+
+@media (max-width: 560px) {
+  .container { padding: 0 18px; }
+  .section { padding: clamp(48px, 14vw, 80px) 0; }
+
+  /* Video stats stack to a single column */
+  .video-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .video-stat-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    text-align: left;
+    padding: 18px 20px;
+  }
+  .video-stat-icon { margin: 0; font-size: 1.6rem; }
+  .video-stat-val { font-size: 1.7rem; margin: 0; }
+  .video-stat-label { font-size: 0.85rem; flex: 1; }
+
+  /* Gallery single column */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 210px;
+    gap: 14px;
+  }
+  .gallery-item--1,
+  .gallery-item--6 { grid-row: span 1; }
+  .gallery-item--2 { grid-column: span 1; }
+
+  /* Tighten hero on very small screens */
+  .hero { padding: 100px 0 48px; }
+  .hero-title { font-size: clamp(2.1rem, 11vw, 2.9rem); }
+  .page-hero-title { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+  .hero-chip { font-size: 0.72rem; padding: 5px 12px; }
+  .hero-image-overlay { padding: 12px 14px; }
+  .hero-image-overlay h3 { font-size: 0.82rem; }
+
+  /* Modals get more breathing room */
+  .booking-modal,
+  .recipe-modal { padding: 24px 16px; }
+  .recipe-tools .pill-group { flex-wrap: wrap; }
+  .recipe-modal-actions { gap: 6px; }
+  .recipe-modal-actions .btn-sm { padding: 8px 10px; font-size: 0.75rem; }
+
+  /* Filter pills stay tappable and scrollable */
+  .filter-pills { padding-bottom: 4px; }
+  .filter-pill { padding: 8px 12px; font-size: 0.78rem; }
+
+  /* Video reel overlays */
+  .video-reel-overlay { padding: 16px; }
+  .video-reel-title { font-size: 0.9rem; }
+  .video-reel-sub { font-size: 0.74rem; }
+  .video-reel-pause { bottom: 64px; right: 14px; width: 38px; height: 38px; }
+  .video-play-icon { width: 64px; height: 64px; }
+
+  /* FAQ + contact spacing */
+  .faq-question { padding: 16px 14px; font-size: 0.92rem; }
+  .contact-grid { gap: 20px; }
+  .contact-card { padding: 22px 18px; }
+
+  /* Journal / cards */
+  .journal-grid,
+  .card-grid--3,
+  .card-grid--4 { gap: 16px; }
+  .journal-card-body { padding: 20px 18px; }
+  .journal-card-body h4 { font-size: 1.02rem; }
+
+  /* Footer stack */
+  .footer-grid { gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+  /* Calculator */
+  .calculator-price { font-size: clamp(2.2rem, 12vw, 3rem); }
+  .calculator-inputs label { font-size: 0.9rem; }
+
+  /* CTA banner */
+  .cta-inner h2 { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+
+  /* Video showcase heading */
+  .video-showcase-header .section-title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+
+  /* Split section images */
+  .split-image { aspect-ratio: 4 / 3; }
+
+  /* Mobile drawer */
+  .mobile-drawer { padding: 24px 22px 32px; }
+  .mobile-nav-link { font-size: 1.15rem; }
 }
 
 /* ──────────── Print Styles (Recipe Mode) ──────────── */
