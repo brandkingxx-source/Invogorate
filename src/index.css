@@ -766,6 +766,12 @@ input, select, textarea {
   z-index: 100;
   transition: all 0.45s var(--ease-framer);
   padding: 18px 0;
+  /* Overlays the dark hero: white text for visibility */
+  --header-text: #ffffff;
+  --header-text-soft: rgba(255, 255, 255, 0.72);
+  --header-hover-bg: rgba(255, 255, 255, 0.12);
+  --header-btn-bg: rgba(255, 255, 255, 0.1);
+  --header-btn-hover-bg: rgba(255, 255, 255, 0.18);
 }
 
 .progress-bar {
@@ -785,6 +791,12 @@ input, select, textarea {
   -webkit-backdrop-filter: blur(24px) saturate(1.5);
   border-bottom: 1px solid rgba(163, 177, 138, 0.2);
   box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+  /* Light background on scroll: restore dark text */
+  --header-text: var(--brand-primary);
+  --header-text-soft: var(--text-light);
+  --header-hover-bg: rgba(27, 67, 50, 0.08);
+  --header-btn-bg: rgba(27, 67, 50, 0.06);
+  --header-btn-hover-bg: rgba(27, 67, 50, 0.12);
 }
 
 .header-inner {
@@ -821,13 +833,13 @@ input, select, textarea {
   font-weight: 800;
   font-size: 1.15rem;
   letter-spacing: 0.04em;
-  color: var(--brand-primary);
+  color: var(--header-text);
 }
 
 .brand-tag {
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--text-light);
+  color: var(--header-text-soft);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 3px;
@@ -844,16 +856,16 @@ input, select, textarea {
   padding: 8px 16px;
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--header-text);
   border-radius: var(--radius-full);
   transition: all 0.3s var(--ease-framer);
 }
 .nav-link:hover {
-  color: var(--brand-primary);
-  background: rgba(27, 67, 50, 0.05);
+  color: var(--header-text);
+  background: var(--header-hover-bg);
 }
 .nav-link--active {
-  color: var(--brand-primary);
+  color: var(--header-text);
   font-weight: 700;
 }
 .nav-underline {
@@ -887,12 +899,21 @@ input, select, textarea {
   border-radius: var(--radius-md);
   align-items: center;
   justify-content: center;
-  color: var(--brand-primary);
-  background: rgba(27, 67, 50, 0.06);
+  color: var(--header-text);
+  background: var(--header-btn-bg);
   transition: all 0.25s var(--ease-framer);
 }
 .mobile-menu-btn:hover {
-  background: rgba(27, 67, 50, 0.12);
+  background: var(--header-btn-hover-bg);
+}
+
+.site-header .btn-ghost {
+  background: var(--header-btn-bg);
+  color: var(--header-text);
+}
+.site-header .btn-ghost:hover {
+  background: var(--header-btn-hover-bg);
+  color: var(--header-text);
 }
 
 .mobile-drawer {
