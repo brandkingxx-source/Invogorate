@@ -29,7 +29,19 @@ export default function CateringPage({ onBookClick }) {
     <div className="page page--catering">
       <section className="page-hero">
         <div className="video-hero-bg">
-          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true" poster={VIDEO_POSTERS.cateringHero}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            poster={VIDEO_POSTERS.cateringHero}
+            style={{ opacity: 0 }}
+            onCanPlay={(e) => {
+              e.currentTarget.style.opacity = 1;
+            }}
+          >
             <source src={VIDEO_MEDIA.cateringHero} type="video/mp4" />
           </video>
         </div>

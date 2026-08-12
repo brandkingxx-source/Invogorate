@@ -50,7 +50,7 @@ const GALLERY = [
     label: "Private dining",
   },
   {
-    src: "https://images.unsplash.com/photo-1484723091792-c19564cb333d?auto=format&fit=crop&w=900&q=80",
+    src: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&w=900&q=80",
     alt: "Wholesome breakfast table spread",
     label: "Retreat mornings",
   },
@@ -97,6 +97,11 @@ export default function HomePage({ onOpenRecipe, onBookClick }) {
             playsInline
             preload="metadata"
             aria-hidden="true"
+            poster={VIDEO_POSTERS.homeHero}
+            style={{ opacity: 0 }}
+            onCanPlay={(e) => {
+              e.currentTarget.style.opacity = 1;
+            }}
           >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>

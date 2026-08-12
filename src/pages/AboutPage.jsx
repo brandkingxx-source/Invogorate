@@ -13,7 +13,19 @@ export default function AboutPage() {
     <div className="page page--about">
       <section className="page-hero page-hero--compact">
         <div className="video-hero-bg">
-          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true" poster={VIDEO_POSTERS.aboutHero}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            poster={VIDEO_POSTERS.aboutHero}
+            style={{ opacity: 0 }}
+            onCanPlay={(e) => {
+              e.currentTarget.style.opacity = 1;
+            }}
+          >
             <source src={VIDEO_MEDIA.aboutHero} type="video/mp4" />
           </video>
         </div>

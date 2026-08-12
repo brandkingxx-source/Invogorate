@@ -33,18 +33,11 @@ export default function TiltCard({ children, className = "", onClick }) {
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
-        rotateY,
-        rotateX,
-        transformStyle: "preserve-3d",
-        perspective: 1000
-      }}
+      style={{ rotateY, rotateX, perspective: 1000 }}
       whileHover={{ scale: 1.015, zIndex: 10 }}
       transition={{ ease: "easeOut", duration: 0.3 }}
     >
-      <motion.div style={{ transform: "translateZ(20px)", height: "100%" }}>
-        {children}
-      </motion.div>
+      {children}
     </motion.div>
   );
 }

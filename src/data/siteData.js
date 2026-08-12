@@ -90,9 +90,9 @@ export const HERO_MEDIA = {
   home:
     "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200",
   services:
-    "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200",
   menus:
-    "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
+    "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200",
   journal:
     "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200",
   about:
@@ -106,19 +106,19 @@ export const HERO_MEDIA = {
 export const VIDEO_MEDIA = {
   // Hero background — vibrant cooking on the stove
   homeHero:
-    "https://videos.pexels.com/video-files/4912632/4912632-hd_1920_1080_24fps.mp4",
+    "https://videos.pexels.com/video-files/4912632/4912632-hd_1280_720_24fps.mp4",
   // "Watch our chefs" reel — chef at work in the kitchen
   chefsReel:
-    "https://videos.pexels.com/video-files/14584573/14584573-hd_1920_1080_25fps.mp4",
+    "https://videos.pexels.com/video-files/14584573/14584573-hd_1280_720_25fps.mp4",
   // Catering page hero — food preparation close-up
   cateringHero:
-    "https://videos.pexels.com/video-files/854216/854216-hd_1920_1080_25fps.mp4",
+    "https://videos.pexels.com/video-files/854216/854216-hd_1280_720_25fps.mp4",
   // About page hero — fresh vegetables being prepared
   aboutHero:
-    "https://videos.pexels.com/video-files/10039758/10039758-hd_1920_1080_24fps.mp4",
+    "https://videos.pexels.com/video-files/10039758/10039758-hd_1280_720_24fps.mp4",
   // Journal / editorial reel — garden-led vegetable prep
   journalReel:
-    "https://videos.pexels.com/video-files/5866266/5866266-hd_1920_1080_25fps.mp4",
+    "https://videos.pexels.com/video-files/5866266/5866266-hd_1280_720_25fps.mp4",
   // Salad finishing — used on contact CTA backgrounds
   saladFinishing:
     "https://videos.pexels.com/video-files/3195728/3195728-hd_1920_1080_25fps.mp4",
@@ -137,11 +137,11 @@ export const VIDEO_POSTERS = {
   chefsReel:
     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80",
   cateringHero:
-    "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=1600&q=80",
   aboutHero:
     "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1600&q=80",
   journalReel:
-    "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=1600&q=80",
 };
 
 export const MARQUEE_ITEMS = [
@@ -220,7 +220,7 @@ export const SERVICE_PILLARS = [
     subtitle:
       "Bold, nourishing food that can still move at event speed — built for conscious communities and wellbeing gatherings.",
     image:
-      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200",
     bullets: [
       "Festival-ready service style",
       "Menus that hold quality in high-volume settings",
@@ -264,7 +264,7 @@ export const CATERING_PACKAGES = [
     description:
       "High-volume, high-energy festival service with bold visual branding and a seed-oil free menu that keeps queues moving.",
     image:
-      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
+      "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200",
     pricePerPerson: 45,
     highlights: [
       "Brandable stall / kiosk setup",
@@ -326,7 +326,7 @@ export const MENU_COLLECTIONS = [
   {
     title: "Festival Service",
     image:
-      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200",
     summary:
       "Designed for movement, flow and larger groups while keeping the food generous, vibrant and recognisably Invigourate.",
     details: [
@@ -344,7 +344,7 @@ export const SIGNATURE_DISHES = [
     subtitle:
       "Fruit, grains, bakes and lighter savoury dishes for a calm retreat start.",
     image:
-      "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
+      "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=1200",
     tags: ["Retreat", "Morning", "Wholefood"],
     note: "Designed to feel fresh, restorative and quietly luxurious.",
   },
@@ -410,7 +410,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "The audit shows Invigourate already speaks in a more personal, long-form way. The new site turns that into a stronger digital experience.",
     image:
-      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
+      "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200",
     points: [
       "Longer-form language can create trust",
       "Proof points need context, not just badges",
@@ -449,7 +449,7 @@ export const JOURNAL_FEATURES = [
     excerpt:
       "Our booking process is intentionally personal. Here's how we go from first Instagram message to a confirmed, stress-free event.",
     image:
-      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200",
     points: [
       "We reply within 24 hours with clarifying questions",
       "A draft menu arrives 3–5 days after discovery call",
@@ -588,7 +588,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Coconut-oil-free oven roasted rainbow roots with a crisp stone-mustard and fresh thyme crust.",
     image:
-      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
+      "https://images.unsplash.com/photo-1495195134817-aeb325a55b65?q=80&w=1200",
     prepTime: 20,
     cookTime: 40,
     servings: 6,
@@ -641,7 +641,7 @@ export const RECIPES_DATA = [
     subtitle:
       "Slow-fermented organic sourdough cinnamon buns swirled with stone-ground almond butter and date caramel.",
     image:
-      "https://images.unsplash.com/photo-1498837167922-41c53b4f0971?q=80&w=1200",
+      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200",
     prepTime: 60,
     cookTime: 28,
     servings: 8,
@@ -852,7 +852,7 @@ export const BEAUTY_PRODUCTS = [
     subtitle:
       "A daily ritual: ashwagandha, rhodiola and tulsi extracted in organic cane alcohol for 6 weeks.",
     image:
-      "https://images.unsplash.com/photo-1484723091792-c19564cb333d?q=80&w=1200",
+      "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1200",
     badge: "Tincture",
     price: "£32 / 50ml",
   },
@@ -883,7 +883,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "James immediately put my mind at ease. We hosted 30 guests across a weekend retreat and everything — the pacing, the flavours, the cleanup — was effortless.",
     avatar:
-      "https://images.unsplash.com/photo-1481070555726-e2fe83477d15?q=80&w=1200",
+      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1200",
   },
   {
     name: "Anja Poulter",
@@ -907,7 +907,7 @@ export const AUDIT_TESTIMONIALS = [
     quote:
       "Finding a caterer that truly gets wellness-space hospitality is hard. Invigourate's food doesn't just feed people — it carries the energy of the whole retreat.",
     avatar:
-      "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?q=80&w=1200",
+      "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?q=80&w=1200",
   },
 ];
 
